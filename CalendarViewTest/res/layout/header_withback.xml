@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_alignParentTop="true"
+    android:background="@color/main_title_background"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/header_back"
+            style="@style/login_title_stitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/all_back_bt_selector"
+            android:text="返回"
+            android:layout_alignParentLeft="true" 
+            android:onClick="backIntent"
+            />
+
+        <TextView
+            android:id="@+id/header_title"
+            style="@style/login_title_stitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="培训历史"
+            android:textSize="18sp"
+            android:layout_centerInParent="true" 
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            />
+            <TextView
+            android:id="@+id/header_note"
+            style="@style/login_title_stitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:layout_alignParentRight="true" 
+            android:background="@drawable/all_back_bt_selector"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            />
+    </RelativeLayout>
+
+</LinearLayout>
