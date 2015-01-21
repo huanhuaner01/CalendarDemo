@@ -16,6 +16,7 @@ public class MainActivity extends FragmentActivity {
 	private String TAG = "MainActivity" ;
     private TextView title ;
     private ViewPager mPager ;
+    private String beginDate , endDate ; //日历控件的可选区间 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +24,13 @@ public class MainActivity extends FragmentActivity {
         mPager = (ViewPager)this.findViewById(R.id.pager) ;
         title = (TextView)this.findViewById(R.id.header_title) ;
         CalendarPagerAdapter mPagerAdapter = new CalendarPagerAdapter(getSupportFragmentManager());
+        
+        /**************选择区间设置*********************/
+        this.beginDate = "" ;
+        this.endDate = "2015-3-15" ;
+        mPagerAdapter.setSection(beginDate, endDate) ;
+        /**************选择区间设置结束******************/
+        
 		mPager.setAdapter(mPagerAdapter);
 		mPager.setOnPageChangeListener(new OnPageChangeListener(){
 
@@ -30,7 +38,7 @@ public class MainActivity extends FragmentActivity {
 			public void onPageScrollStateChanged(int arg0) {
 				
 			}
-
+            
 			@Override
 			public void onPageScrolled(int arg0, float arg1, int arg2) {
 				
@@ -38,7 +46,7 @@ public class MainActivity extends FragmentActivity {
 
 			@Override
 			public void onPageSelected(int index) {
-				Date date = CalendarUtil.getData(index) ;
+				Date date = CalendarUtil.getDate(index) ;
 				SimpleDateFormat df = new SimpleDateFormat("yyyy/MM");
 				String d = df.format(date) ;
 				title.setText(d) ;
@@ -47,7 +55,6 @@ public class MainActivity extends FragmentActivity {
 		});
 		setToDay();
     }
-    
     private void setToDay(){
     	Calendar cal=Calendar.getInstance();
     	int year = cal.get(Calendar.YEAR) ;

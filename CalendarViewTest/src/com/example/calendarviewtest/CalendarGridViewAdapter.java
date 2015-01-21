@@ -75,6 +75,8 @@ public class CalendarGridViewAdapter extends SimpleAdapter {
 		case -2: //今天不可选
 			tv.setEnabled(true)  ;
 			tv.setSelected(false);
+			tv.setTextColor(this.context.getResources().getColor(R.color.Grey_line)) ;
+			tv.setBackgroundResource(R.drawable.cricle_todat_notoption) ;
 			break ;
 			
 		}
