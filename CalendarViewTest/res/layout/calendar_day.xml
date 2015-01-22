@@ -8,11 +8,10 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:gravity="center"
-        android:text="26"
         android:textColor="@drawable/day_tv_selector"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
         android:background="@drawable/day_bg"
         />
            <View
